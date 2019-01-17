@@ -22,6 +22,8 @@ public class Main {
 
         app.post("/contact-data-save", ctx -> {
             ctx.result(
+
+
                     "First Name: "    + ctx.req.getParameter("firstname") + "\n"
                     + "Last Name: "   + ctx.req.getParameter("lastname") + "\n"
                     + "Age: "           + ctx.req.getParameter("Age") + "\n"
@@ -53,7 +55,7 @@ public class Main {
     public static void sendFileContent(Context ctx) throws IOException {
         String path = "C:\\Users\\MEL\\Desktop\\courses2018Fall\\JavaApplication\\PraveenExercises\\hello\\src\\main\\resources\\collect-data.html";
         byte[] byteString = Files.readAllBytes(Paths.get(path));
-        String content = new String(byteString, "UTF-8");
+        String content = new String(byteString, StandardCharsets.UTF_8);
         ctx.html(content);
     }
 
